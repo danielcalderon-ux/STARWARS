@@ -21,19 +21,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ peoples: data.results });
 					});
 			},
-			loadPlanet: () => {
-				fetch("https://swapi.dev/api/planets")
-					.then(res => res.json())
-					.then(data => {
-						setStore({ planets: data.results });
-					});
-			}
-			// loadPlanet: async () => {
-			// 	const url = "https://swapi.dev/api/planets";
-			// 	const response = await fetch(url);
-			// 	const data = await response.json();
-			// 	setStore({ planetas: data.results });
+			// loadPlanet: () => {
+			// 	fetch("https://swapi.dev/api/planets")
+			// 		.then(res => res.json())
+			// 		.then(data => {
+			// 			setStore({ planets: data.results });
+			// 		});
 			// }
+			loadPlanet: async () => {
+				const url = "https://www.swapi.tech/api/planets";
+				const response = await fetch(url);
+				const data = await response.json();
+				setStore({ planets: data.results });
+			}
 		}
 	};
 };
