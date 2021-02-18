@@ -34,20 +34,20 @@ export const Home = () => {
 				</div>
 			</div>
 			<h1>PLANETAS</h1>
-			{/* <div className="align-items-center text-center mt5">
+			<div className="align-items-center text-center mt5">
 				<div className="d-flex flex-row p-4" style={{ overflow: "auto" }}>
 					<div className="row">
-						{store.peoples.map((people, i) => {
+						{store.planets.map((planet, i) => {
 							return (
 								<div key={i}>
-									<Planetas nombre={planets.name} />
+									<Planetas nombre={planet.name} />
 								</div>
 							);
 						})}
 						;
 					</div>
 				</div>
-			</div> */}
+			</div>
 		</div>
 	);
 };
