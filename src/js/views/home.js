@@ -15,7 +15,7 @@ export const Home = () => {
 	//console.log(store.planets);
 	return (
 		<div>
-			<h1>PERSONAJES</h1>
+			<h1 className="text-white">PERSONAJES</h1>
 			<div className="container">
 				<div className="align-items-center text-center">
 					<div style={{ overflow: "auto" }}>
@@ -29,6 +29,7 @@ export const Home = () => {
 												height={people.height}
 												gender={people.gender}
 												birth_year={people.birth_year}
+												id={i}
 											/>
 										</div>
 									);
@@ -40,7 +41,7 @@ export const Home = () => {
 				</div>
 			</div>
 			<br />
-			<h1>PLANETAS</h1>
+			<h1 className="text-white">PLANETAS</h1>
 			<div className="container">
 				<div className="align-items-center text-center">
 					<div style={{ overflow: "auto" }}>
@@ -49,7 +50,7 @@ export const Home = () => {
 								{store.planets.map((planet, i) => {
 									return (
 										<div key={i}>
-											<Planetas nombre={planet.name} />
+											<Planetas nombre={planet.name} id={i} />
 										</div>
 									);
 								})}

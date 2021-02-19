@@ -4,7 +4,7 @@ import rigoImage from "../../img/sw.jpg";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light bg-secondary mb-3">
 			<Link to="/">
 				<i className="fab fa-jedi-order fa-3x" />
 				<img src={rigoImage} height="80" />

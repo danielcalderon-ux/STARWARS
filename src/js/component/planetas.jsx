@@ -16,7 +16,7 @@ export const Planetas = props => (
 			<p className="card-text">
 				Some quick example text to build on the card title and make up the bulk of the cards content.
 			</p>
-			<Link to="/planetas/1" className="btn btn-primary">
+			<Link to={`/planetas/${props.id}`} className="btn btn-primary">
 				Go somewhere
 			</Link>
 			<button type="button" className="btn btn-outline-info float-right">
@@ -27,5 +27,6 @@ export const Planetas = props => (
 );
 
 Planetas.propTypes = {
-	nombre: propTypes.string
+	nombre: propTypes.string,
+	id: propTypes.number
 };

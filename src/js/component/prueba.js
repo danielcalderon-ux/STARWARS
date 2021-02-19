@@ -1,0 +1,1 @@
+//{store.peoples[params.theid].name}
