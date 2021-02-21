@@ -33,8 +33,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch(url);
 				const data = await response.json();
 				setStore({ planets: data.results });
+			},
+			addFavorite: (name, type) => {
+				const store = getStore();
+				let count = 0;
+				store.favorites.map(each => {
+					if (each.name == name) {
+						count = 1;
+					}
+				});
+				if (count == 0) {
+					setStore({
+						favorites: [
+							...store.favorites,
+							{
+								name: name,
+								type: type
+							}
+						]
+					});
+				}
+				console.log(store.favorites);
 			}
 		}
 	};
 };
+
 export default getState;

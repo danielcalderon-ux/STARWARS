@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState, useEffect, setState, useContext } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
+import { Context } from "../store/appContext";
 
 export const Personajes = props => {
+	const { store, actions } = useContext(Context);
+	const nombre = props.nombre;
+
 	return (
 		<div className="card mx-2" style={{ width: "18rem" }}>
 			<img
@@ -21,9 +25,12 @@ export const Personajes = props => {
 				<Link to={`/personajes/${props.id}`} className="btn btn-primary">
 					Go somewhere
 				</Link>
-				<button type="button" className="btn btn-outline-info float-right">
-					<i className="far fa-heart text-danger " />
-				</button>
+
+				<Link onClick={() => actions.addFavorite(nombre, "persona")}>
+					<button type="button" className="btn btn-outline-info float-right">
+						<i className="far fa-heart text-danger " />
+					</button>
+				</Link>
 			</div>
 		</div>
 	);
