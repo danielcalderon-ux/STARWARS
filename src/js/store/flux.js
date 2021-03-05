@@ -15,10 +15,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 	setStore({ peoples: data.results });
 			// },
 			loadPeople: () => {
-				fetch("https://swapi.dev/api/people/")
+				fetch("https://3000-plum-tarantula-a9fa19dw.ws-us03.gitpod.io/personajes/")
 					.then(res => res.json())
 					.then(data => {
-						setStore({ peoples: data.results });
+						setStore({ peoples: data });
 					});
 			},
 			// loadPlanet: () => {
@@ -29,10 +29,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 		});
 			// }
 			loadPlanet: async () => {
-				const url = "https://www.swapi.tech/api/planets";
+				const url = "https://3000-plum-tarantula-a9fa19dw.ws-us03.gitpod.io/planetas";
 				const response = await fetch(url);
 				const data = await response.json();
-				setStore({ planets: data.results });
+				setStore({ planets: data });
 			},
 			addFavorite: (name, type) => {
 				const store = getStore();
