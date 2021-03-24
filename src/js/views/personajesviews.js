@@ -11,9 +11,18 @@ export const Personajeswiews = props => {
 	console.log(detalle);
 
 	return (
-		<div className="jumbotron jumbotron-fluid">
+		<div className="jumbotron jumbotron-fluid bg-dark text-white">
 			<div className="container">
 				<h1 className="display-4">{detalle.name} </h1>
+				<p>
+					Existen dos grupos de humanos que son sensibles a la Fuerza pero que poseen ideologías diferentes
+					entre sí: los Jedi y los Sith. La estructura jerárquica de la orden Jedi incluye a los maestros,
+					como Obi-Wan Kenobi, Luke Skywalker y Yoda; sus aprendices o también conocidos como padawan; los
+					iniciados o younglings que suelen ser menores de edad; y los caballeros, cuyo estatus progresa al de
+					un maestro una vez que concluyen el entrenamiento de su respectivo aprendiz. Además de los
+					anteriores, existen otros tipos de Jedi que persiguen fines específicos: por ejemplo, los
+					guardianes, los centinelas y los consulares.
+				</p>
 				<div className="row">
 					<div className="col border-danger">
 						<strong>nombre</strong>

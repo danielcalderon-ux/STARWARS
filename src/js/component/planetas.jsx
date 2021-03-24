@@ -18,9 +18,9 @@ export const Planetas = props => {
 			/>
 			<div className="card-body">
 				<h5 className="card-title">{props.nombre}</h5>
-				<p className="card-text">
-					Some quick example text to build on the card title and make up the bulk of the cards content.
-				</p>
+				<p className="card-text">clima: {props.climate}</p>
+				<p className="card-text">poplacion: {props.population}</p>
+				<p className="card-text">diametro: {props.diameter}</p>
 				<Link to={`/planetas/${props.id}`} className="btn btn-primary">
 					Go somewhere
 				</Link>
@@ -36,5 +36,8 @@ export const Planetas = props => {
 
 Planetas.propTypes = {
 	nombre: propTypes.string,
+	climate: propTypes.string,
+	population: propTypes.string,
+	diameter: propTypes.string,
 	id: propTypes.number
 };

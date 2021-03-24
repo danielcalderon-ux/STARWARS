@@ -50,7 +50,13 @@ export const Home = () => {
 								{store.planets.map((planet, i) => {
 									return (
 										<div key={i}>
-											<Planetas nombre={planet.name} id={i} />
+											<Planetas
+												nombre={planet.name}
+												climate={planet.climate}
+												population={planet.population}
+												diameter={planet.diameter}
+												id={i}
+											/>
 										</div>
 									);
 								})}

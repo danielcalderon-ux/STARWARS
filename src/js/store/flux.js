@@ -55,14 +55,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 				}
 				console.log(store.favorites);
-				deleteFavorite: id => {
-					//Este id es el id del Favorito
-					const store = getStore();
-					const newFavorites = store.favorites.filter(item => item.id !== id); //id del favorito con el id de cada favorito de mi lista
-					setStore({ favorites: [...newFavorites] });
-					const actions = getActions();
-					actions.deleteFavorites(id);
-				};
+			},
+			deleteFavorite: id => {
+				const store = getStore();
+
+				const newFavorites = store.favorites.filter((item, i) => i !== id);
+				setStore({ favorites: newFavorites });
 			}
 		}
 	};

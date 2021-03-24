@@ -23,11 +23,8 @@ export const Navbar = () => {
 						{store.favorites.map((favorite, i) => {
 							if (favorite.type == "persona") {
 								return (
-									<div key={i}>
-										<DropdownItem
-											text
-											className="text-primary"
-											onClick={() => actions.deleteFavorite(i)}>
+									<div key={i} onClick={() => actions.deleteFavorite(i)}>
+										<DropdownItem>
 											{favorite.name}
 											&nbsp;&nbsp;&nbsp;
 											<i className="far fa-trash-alt" />
@@ -42,11 +39,8 @@ export const Navbar = () => {
 						{store.favorites.map((favorite, i) => {
 							if (favorite.type == "planeta") {
 								return (
-									<div key={i}>
-										<DropdownItem
-											text
-											className="text-primary"
-											onClick={() => actions.deleteFavorite(i)}>
+									<div key={i} onClick={() => actions.deleteFavorite(i)}>
+										<DropdownItem text className="text-primary">
 											{favorite.name}
 											&nbsp;&nbsp;&nbsp;
 											<i className="far fa-trash-alt" />
