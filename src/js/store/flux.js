@@ -15,10 +15,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 	setStore({ peoples: data.results });
 			// },
 			loadPeople: () => {
-				fetch("https://3000-plum-tarantula-a9fa19dw.ws-us03.gitpod.io/personajes/")
+				fetch("https://swapi.dev/api/people/")
 					.then(res => res.json())
 					.then(data => {
-						setStore({ peoples: data });
+						setStore({ peoples: data.results });
 					});
 			},
 			// loadPlanet: () => {
@@ -28,11 +28,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 			setStore({ planets: data.results });
 			// 		});
 			// }
-			loadPlanet: async () => {
-				const url = "https://3000-plum-tarantula-a9fa19dw.ws-us03.gitpod.io/planetas";
-				const response = await fetch(url);
-				const data = await response.json();
-				setStore({ planets: data });
+			loadPlanet: () => {
+				fetch("https://swapi.dev/api/planets/")
+					.then(res => res.json())
+					.then(data => {
+						setStore({ planets: data.results });
+					});
 			},
 			addFavorite: (name, type) => {
 				const store = getStore();
@@ -54,6 +55,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 				}
 				console.log(store.favorites);
+				deleteFavorite: id => {
+					//Este id es el id del Favorito
+					const store = getStore();
+					const newFavorites = store.favorites.filter(item => item.id !== id); //id del favorito con el id de cada favorito de mi lista
+					setStore({ favorites: [...newFavorites] });
+					const actions = getActions();
+					actions.deleteFavorites(id);
+				};
 			}
 		}
 	};

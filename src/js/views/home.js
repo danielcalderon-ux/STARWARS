@@ -26,9 +26,9 @@ export const Home = () => {
 										<div key={i}>
 											<Personajes
 												nombre={people.name}
-												height={people.estatura}
-												gender={people.genero}
-												birth_year={people.fecha_nacimiento}
+												height={people.height}
+												gender={people.gender}
+												birth_year={people.birth_year}
 												id={i}
 											/>
 										</div>

@@ -24,8 +24,13 @@ export const Navbar = () => {
 							if (favorite.type == "persona") {
 								return (
 									<div key={i}>
-										<DropdownItem text className="text-primary">
+										<DropdownItem
+											text
+											className="text-primary"
+											onClick={() => actions.deleteFavorite(i)}>
 											{favorite.name}
+											&nbsp;&nbsp;&nbsp;
+											<i className="far fa-trash-alt" />
 										</DropdownItem>
 									</div>
 								);
@@ -38,8 +43,13 @@ export const Navbar = () => {
 							if (favorite.type == "planeta") {
 								return (
 									<div key={i}>
-										<DropdownItem text className="text-primary">
+										<DropdownItem
+											text
+											className="text-primary"
+											onClick={() => actions.deleteFavorite(i)}>
 											{favorite.name}
+											&nbsp;&nbsp;&nbsp;
+											<i className="far fa-trash-alt" />
 										</DropdownItem>
 									</div>
 								);
